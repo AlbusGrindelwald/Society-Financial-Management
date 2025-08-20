@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Society Financial Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle, #1a1a1a, #000000);
+      color: #f1f1f1;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .navbar {
+      background-color: #ffc107;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #000 !important;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-weight: 600;
+      font-size: 3rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #cccccc;
+    }
+
+    .card-button {
+      border-radius: 12px;
+      padding: 30px;
+      background: #111;
+      border: 1px solid #333;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(255, 193, 7, 0.1);
+      color: #ffc107;
+    }
+
+    .card-button:hover {
+      background: #222;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(255, 193, 7, 0.3);
+    }
+
+    .icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #ffc107;
+    }
+
+    .card-button h5 {
+      color: #fff;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .animated-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: repeating-radial-gradient(circle at center, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01) 1px, transparent 3px);
+      animation: moveBg 20s linear infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes moveBg {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-100px, -100px); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="animated-bg"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">🛠 The Boys DBMS Project</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-dark" href="{{ url_for('login') }}"><i class="bi bi-lock-fill"></i> Admin Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Society Financial Management</h1>
+      <p class="mt-3">Efficiently manage members, funds, payments, maintenance, and reports.</p>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
+        <div class="col">
+          <a href="{{ url_for('members') }}" class="card-button text-decoration-none d-block">
+            <div class="icon"><i class="bi bi-people-fill"></i></div>
+            <h5>Members</h5>
+          </a>
+        </div>
+        <div class="col">
+          <a href="{{ url_for('funds') }}" class="card-button text-decoration-none d-block">
+            <div class="icon"><i class="bi bi-cash-coin"></i></div>
+            <h5>Funds</h5>
+          </a>
+        </div>
+        <div class="col">
+          <a href="{{ url_for('payments') }}" class="card-button text-decoration-none d-block">
+            <div class="icon"><i class="bi bi-credit-card-2-front-fill"></i></div>
+            <h5>Payments</h5>
+          </a>
+        </div>
+        <div class="col">
+          <a href="{{ url_for('expenses') }}" class="card-button text-decoration-none d-block">
+            <div class="icon"><i class="bi bi-graph-down"></i></div>
+            <h5>Expenses</h5>
+          </a>
+        </div>
+        <div class="col">
+          <a href="{{ url_for('maintenance') }}" class="card-button text-decoration-none d-block">
+            <div class="icon"><i class="bi bi-tools"></i></div>
+            <h5>Maintenance</h5>
+          </a>
+        </div>
+        <div class="col">
+          <a href="{{ url_for('active_members') }}" class="card-button text-decoration-none d-block">
+            <div class="icon"><i class="bi bi-person-check-fill"></i></div>
+            <h5>Active Members</h5>
+          </a>
+        </div>
+        <div class="col">
+          <a href="{{ url_for('fund_summary') }}" class="card-button text-decoration-none d-block">
+            <div class="icon"><i class="bi bi-bar-chart-line-fill"></i></div>
+            <h5>Fund Summary</h5>
+          </a>
+        </div>
+        <div class="col">
+          <a href="{{ url_for('open_complaints') }}" class="card-button text-decoration-none d-block">
+            <div class="icon"><i class="bi bi-exclamation-triangle-fill"></i></div>
+            <h5>Open Complaints</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
